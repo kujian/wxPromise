@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>wx.pro.lazyInitChart 使用说明 | wxPromise</title>
+    <meta name="description" content="强大的、优雅的 小程序 Promise 库">
+    
+    
+    <link rel="preload" href="/wxPromise/assets/css/styles.bf0a7a88.css" as="style"><link rel="preload" href="/wxPromise/assets/js/app.bf0a7a88.js" as="script"><link rel="preload" href="/wxPromise/assets/js/4.d5ca7508.js" as="script"><link rel="prefetch" href="/wxPromise/assets/css/1.styles.3b481467.css"><link rel="prefetch" href="/wxPromise/assets/js/1.3b481467.js"><link rel="prefetch" href="/wxPromise/assets/js/2.cc4d947e.js"><link rel="prefetch" href="/wxPromise/assets/js/3.53b65958.js"><link rel="prefetch" href="/wxPromise/assets/js/5.cd86c407.js"><link rel="prefetch" href="/wxPromise/assets/js/6.1f8ea3fb.js">
+    <link rel="stylesheet" href="/wxPromise/assets/css/styles.bf0a7a88.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/wxPromise/" class="home-link router-link-active"><!----><span class="site-name">
+      wxPromise
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/youngjuning/wxPromise" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/youngjuning/wxPromise" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>wx.pro.lazyInitChart 使用说明</span><!----></p><ul class="sidebar-group-items"><li><a href="/wxPromise/detail/lazyInitChart.html#wx-pro-lazyinitchart-使用说明" class="sidebar-link">wx.pro.lazyInitChart 使用说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/wxPromise/detail/lazyInitChart.html#文件架构" class="sidebar-link">文件架构</a></li><li class="sidebar-sub-header"><a href="/wxPromise/detail/lazyInitChart.html#mycardp-option-js" class="sidebar-link">myCardp-option.js</a></li><li class="sidebar-sub-header"><a href="/wxPromise/detail/lazyInitChart.html#mychart-js" class="sidebar-link">myChart.js</a></li><li class="sidebar-sub-header"><a href="/wxPromise/detail/lazyInitChart.html#mycard-wxml" class="sidebar-link">myCard.wxml</a></li><li class="sidebar-sub-header"><a href="/wxPromise/detail/lazyInitChart.html#如何销毁实例" class="sidebar-link">如何销毁实例</a></li></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h2 id="wx-pro-lazyinitchart-使用说明"><a href="#wx-pro-lazyinitchart-使用说明" aria-hidden="true" class="header-anchor">#</a> wx.pro.lazyInitChart 使用说明</h2><h3 id="文件架构"><a href="#文件架构" aria-hidden="true" class="header-anchor">#</a> 文件架构</h3><blockquote><p>option 一般很大，所以建议单独写出来</p></blockquote><p><img src="https://user-images.githubusercontent.com/13204332/39611173-5b6a4dee-4f88-11e8-8db9-c13d9f8fd701.png" alt="image"></p><h3 id="mycardp-option-js"><a href="#mycardp-option-js" aria-hidden="true" class="header-anchor">#</a> myCardp-option.js</h3><p>因为可能需要在获取 option 之后进行其他操作，所以我们使用 Promise 对象封装了该方法。</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">getOption</span> <span class="token operator">=</span> <span class="token punctuation">(</span>pv<span class="token punctuation">,</span>uv<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> option <span class="token operator">=</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        text<span class="token punctuation">:</span> <span class="token string">'卡片访问量统计'</span><span class="token punctuation">,</span>
+        left<span class="token punctuation">:</span> <span class="token string">'center'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      color<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'#37a2da'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      tooltip<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        trigger<span class="token punctuation">:</span> <span class="token string">'axis'</span><span class="token punctuation">,</span>
+        axisPointer<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token comment">// 坐标轴指示器，坐标轴触发有效</span>
+          type<span class="token punctuation">:</span> <span class="token string">'shadow'</span> <span class="token comment">// 默认为直线，可选为：'line' | 'shadow'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      grid<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        left<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        right<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        bottom<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+        top<span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+        containLabel<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      xAxis<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
+        axisLine<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          lineStyle<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            color<span class="token punctuation">:</span> <span class="token string">'#999'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'人次'</span><span class="token punctuation">,</span> <span class="token string">'人数'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        axisLabel<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          color<span class="token punctuation">:</span> <span class="token string">'#666'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      yAxis<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+        axisTick<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          show<span class="token punctuation">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        axisLine<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          lineStyle<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            color<span class="token punctuation">:</span> <span class="token string">'#999'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        axisLabel<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          color<span class="token punctuation">:</span> <span class="token string">'#666'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      series<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">'bar'</span><span class="token punctuation">,</span>
+        label<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          normal<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            show<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            position<span class="token punctuation">:</span> <span class="token string">'inside'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token string">'人次'</span><span class="token punctuation">,</span>
+            value<span class="token punctuation">:</span> pv
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token string">&quot;人数&quot;</span><span class="token punctuation">,</span>
+            value<span class="token punctuation">:</span> uv
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        itemStyle<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          emphasis<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            color<span class="token punctuation">:</span> <span class="token string">'#32c5e9'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> getOption
+</code></pre></div><h3 id="mychart-js"><a href="#mychart-js" aria-hidden="true" class="header-anchor">#</a> myChart.js</h3><p><code>AV.User.loginWithWeapp()</code> 是 leancloud 的小程序一键登录，我的场景是需要进入页面动态获取该用户的 pv，uv。你可以理解为一个网络请求。换成 <code>wx.pro.request(option).then()</code> 是一样的的</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> echarts <span class="token keyword">from</span> <span class="token string">'../../utils/ec-canvas/echarts'</span>
+<span class="token keyword">import</span> getOption <span class="token keyword">from</span> <span class="token string">'./myCard-option.js'</span>
+<span class="token keyword">import</span> <span class="token constant">AV</span> <span class="token keyword">from</span> <span class="token string">'../../utils/av-weapp-min.js'</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">/**
+   * 页面的初始数据
+   */</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    ecdata<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 将 lazyLoad 设为 true 后，需要手动初始化图表</span>
+      lazyLoad<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">/**
+   * 生命周期函数--监听页面加载
+   */</span>
+  onLoad<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">lazyInitChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">/**
+   * 懒加载图表
+   */</span>
+  <span class="token function">lazyInitChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token constant">AV</span><span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">loginWithWeapp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> pv <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'cardSharing'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pv
+      <span class="token keyword">let</span> uv <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'cardSharing'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>uv
+      <span class="token function">getOption</span><span class="token punctuation">(</span>pv<span class="token punctuation">,</span>uv<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>option <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        wx<span class="token punctuation">.</span>pro<span class="token punctuation">.</span><span class="token function">lazyInitChart</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span>echarts<span class="token punctuation">,</span><span class="token string">'#myCard'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>chart<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> chart
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="mycard-wxml"><a href="#mycard-wxml" aria-hidden="true" class="header-anchor">#</a> myCard.wxml</h3><p>全局设置样式：</p><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.ec-container</span><span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ec-container<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ec-canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCard<span class="token punctuation">&quot;</span></span> <span class="token attr-name">canvas-id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCard<span class="token punctuation">&quot;</span></span> <span class="token attr-name">ec</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{{ecdata}}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ec-canvas</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="如何销毁实例"><a href="#如何销毁实例" aria-hidden="true" class="header-anchor">#</a> 如何销毁实例</h3><p><img src="https://user-images.githubusercontent.com/13204332/39611342-8dcd1856-4f89-11e8-9616-623d16a8b346.png" alt="image"></p><p>如图，我们的API，执行了 <code>that.chart = chart</code>,因此你可以模仿官方demo封装一个方法：</p><p>目前我并没有封装这个方法到 api 中，因为使用比较灵活，用户可以自己在页面中封装：</p><div class="language-js extra-class"><pre class="language-js"><code>dispose<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>isDisposed<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>你还可以像官方demo那样，在懒加载初始化成功后：</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+   * 懒加载图表
+   */</span>
+  <span class="token function">lazyInitChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token constant">AV</span><span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">loginWithWeapp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>user <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> pv <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'cardSharing'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pv
+      <span class="token keyword">let</span> uv <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'cardSharing'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>uv
+      <span class="token function">getOption</span><span class="token punctuation">(</span>pv<span class="token punctuation">,</span>uv<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>option <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        wx<span class="token punctuation">.</span>pro<span class="token punctuation">.</span><span class="token function">lazyInitChart</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span>echarts<span class="token punctuation">,</span><span class="token string">'#myCard'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>chart<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            isLoaded<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            isDisposed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> chart
+         <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>因为我的理念是避免过度封装，所有使用起来还是很灵活的，如果有什么疑问，可以直接问我</p></div><div class="page-edit"><!----><div class="last-updated"><span class="prefix">Last Updated: </span><span class="time">7/22/2018, 10:33:03 AM</span></div></div><!----></div></div></div>
+    <script src="/wxPromise/assets/js/app.bf0a7a88.js" defer></script><script src="/wxPromise/assets/js/4.d5ca7508.js" defer></script>
+  </body>
+</html>

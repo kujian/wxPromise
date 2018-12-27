@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>demo | wxPromise</title>
+    <meta name="description" content="强大的、优雅的 小程序 Promise 库">
+    
+    
+    <link rel="preload" href="/wxPromise/assets/css/styles.bf0a7a88.css" as="style"><link rel="preload" href="/wxPromise/assets/js/app.bf0a7a88.js" as="script"><link rel="preload" href="/wxPromise/assets/js/3.53b65958.js" as="script"><link rel="prefetch" href="/wxPromise/assets/css/1.styles.3b481467.css"><link rel="prefetch" href="/wxPromise/assets/js/1.3b481467.js"><link rel="prefetch" href="/wxPromise/assets/js/2.cc4d947e.js"><link rel="prefetch" href="/wxPromise/assets/js/4.d5ca7508.js"><link rel="prefetch" href="/wxPromise/assets/js/5.cd86c407.js"><link rel="prefetch" href="/wxPromise/assets/js/6.1f8ea3fb.js">
+    <link rel="stylesheet" href="/wxPromise/assets/css/styles.bf0a7a88.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/wxPromise/" class="home-link router-link-active"><!----><span class="site-name">
+      wxPromise
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/youngjuning/wxPromise" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/youngjuning/wxPromise" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>demo</span><!----></p><ul class="sidebar-group-items"><li><a href="/wxPromise/detail/async.html#demo" class="sidebar-link">demo</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h2 id="demo"><a href="#demo" aria-hidden="true" class="header-anchor">#</a> demo</h2><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> regeneratorRuntime <span class="token keyword">from</span> <span class="token string">'/utils/regenerator-runtime'</span>
+<span class="token keyword">import</span> <span class="token string">'./utils/wxPromise'</span>
+
+<span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  onLaunch<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">asyncFunc</span><span class="token punctuation">(</span><span class="token string">'youngjuning'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">finally</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      wx<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">/**
+   * 异步函数使用demo
+   * 当内部有异步操作的时候可以使用，目前不推荐全面在小程序中代替 Promise
+   * async 函数调用的时候支持 finally
+   */</span>
+  asyncFunc<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> userInfo
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        userInfo <span class="token operator">=</span> res
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> userInfo
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> e
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">/**
+   * 异步函数
+   */</span>
+  <span class="token function">getUserInfo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">showLoading</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> <span class="token string">'资料获取中...'</span><span class="token punctuation">,</span>
+      mask<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      wx<span class="token punctuation">.</span>pro<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 发送 res.code 到后台换取 openId, sessionKey, unionId</span>
+        <span class="token keyword">let</span> code <span class="token operator">=</span> res<span class="token punctuation">.</span>code
+        <span class="token comment">// 可以将 res 发送给后台解码出 unionId</span>
+        wx<span class="token punctuation">.</span>pro<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>userInfo <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          wx<span class="token punctuation">.</span>pro<span class="token punctuation">.</span><span class="token function">setStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            key<span class="token punctuation">:</span> <span class="token string">'userInfo'</span><span class="token punctuation">,</span>
+            data<span class="token punctuation">:</span> res<span class="token punctuation">.</span>userInfo
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>userInfo<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span> err <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'存储用户信息失败！'</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <span class="token comment">// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回</span>
+          <span class="token comment">// 所以此处加入 callback 以防止这种情况</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>userInfoReadyCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">userInfoReadyCallback</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> err <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'登录失败：'</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div><div class="page-edit"><!----><div class="last-updated"><span class="prefix">Last Updated: </span><span class="time">7/22/2018, 10:33:03 AM</span></div></div><!----></div></div></div>
+    <script src="/wxPromise/assets/js/app.bf0a7a88.js" defer></script><script src="/wxPromise/assets/js/3.53b65958.js" defer></script>
+  </body>
+</html>
